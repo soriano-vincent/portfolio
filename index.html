@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#193b30">
+  <meta name="description" content="Portfolio de Vincent Soriano, apprenti paysagiste en BTSA Aménagements paysagers dans l'Hérault.">
+  <title>Vincent Soriano — Portfolio paysager</title>
+  <style>
+    :root{--forest:#193b30;--green:#456e55;--sage:#dfe8dc;--cream:#f6f4ec;--sand:#e9dfcd;--ink:#26342b;--muted:#69766b;--white:#fff;--radius:18px}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--cream);color:var(--ink);font:16px/1.65 system-ui,-apple-system,Segoe UI,sans-serif}a{color:inherit}img{display:block;width:100%;height:100%;object-fit:cover}button{font:inherit}section{scroll-margin-top:85px}.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+    header{position:sticky;top:0;z-index:20;background:#f6f4ecee;backdrop-filter:blur(12px);border-bottom:1px solid #d7ddcf}.nav{display:flex;justify-content:space-between;align-items:center;min-height:76px;gap:20px}.brand{font-weight:800;text-decoration:none;letter-spacing:.03em;color:var(--forest)}.brand span{color:var(--green)}.navlinks{display:flex;align-items:center;gap:26px}.navlinks a{text-decoration:none;font-size:.91rem;font-weight:600}.navlinks a:hover{color:var(--green)}.menu{display:none;background:none;border:0;font-size:1.6rem;color:var(--forest);cursor:pointer}
+    .hero{background:var(--forest);color:white;overflow:hidden}.hero-grid{min-height:580px;display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:7%;padding:65px 0}.eyebrow{text-transform:uppercase;letter-spacing:.2em;font-size:.76rem;font-weight:750;color:#bad2bb}.hero h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(3.7rem,7vw,6.8rem);line-height:1.03;letter-spacing:-.045em;margin:22px 0}.hero h1 em{font-style:normal;color:#b9cdb2}.hero p{max-width:510px;color:#e0e9de;font-size:1.08rem}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:7px;text-decoration:none;font-weight:700;font-size:.9rem;background:#dce9d4;color:var(--forest);transition:transform .2s,background .2s}.btn:hover{transform:translateY(-2px);background:white}.btn.outline{background:transparent;border:1px solid #a2b8a7;color:white}.hero-photo{height:440px;border-radius:180px 180px 12px 12px;overflow:hidden;position:relative;background:#56745e}.hero-photo img{filter:saturate(.85)}.photo-fallback{display:none;position:absolute;inset:0;align-items:center;justify-content:center;padding:30px;text-align:center;color:#fff;background:linear-gradient(140deg,#4e795c,#b3bd9b);font-family:Georgia,serif;font-size:1.5rem}
+    .section{padding:92px 0}.section.alt{background:white}.section-head{margin-bottom:35px}.kicker{color:var(--green);text-transform:uppercase;letter-spacing:.18em;font-size:.75rem;font-weight:800}.section h2{font:400 clamp(2.2rem,4vw,3.3rem)/1.15 Georgia,serif;letter-spacing:-.03em;color:var(--forest);margin:12px 0 20px}.lead{font-size:1.08rem;max-width:740px;color:#536356}.two-col{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:start}.facts{background:var(--sage);padding:30px;border-radius:var(--radius)}.facts p{margin:0 0 17px}.facts p:last-child{margin:0}.facts strong{display:block;color:var(--forest)}.chips{display:flex;gap:9px;flex-wrap:wrap;margin-top:20px}.chip{border:1px solid #c7d2c5;background:#f8faf5;border-radius:100px;padding:7px 14px;font-size:.86rem}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.skill{border:1px solid #e0e5d9;border-radius:var(--radius);padding:26px;background:#fafbf8}.skill .number{color:var(--green);font-weight:800;font-size:.78rem}.skill h3{font:400 1.45rem Georgia,serif;color:var(--forest);margin:12px 0}.skill p{margin:0;color:#5d695e;font-size:.94rem}
+    .projects{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}.project{background:white;border:1px solid #e2e4da;border-radius:var(--radius);overflow:hidden}.project-img{height:280px;background:var(--sage);position:relative}.project-img img{cursor:zoom-in}.project-body{padding:25px}.tag{color:var(--green);font-size:.74rem;text-transform:uppercase;letter-spacing:.1em;font-weight:800}.project h3{font:400 1.55rem Georgia,serif;color:var(--forest);margin:10px 0}.project p{color:#5c685d;font-size:.95rem}.gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:24px}.gallery figure{margin:0}.gallery .project-img{height:190px;border-radius:12px;overflow:hidden}.gallery figcaption{color:var(--muted);font-size:.82rem;padding:8px 2px}.gallery img{cursor:zoom-in}
+    .timeline{border-left:2px solid #cdd9cc;margin-left:8px;padding-left:26px}.job{position:relative;margin-bottom:30px}.job:before{content:"";position:absolute;left:-34px;top:9px;width:12px;height:12px;background:var(--green);border-radius:50%}.job small{color:var(--green);font-weight:800}.job h3{margin:4px 0;font-size:1.05rem}.job p{margin:0;color:var(--muted);font-size:.93rem}
+    .contact{background:var(--forest);color:white}.contact h2{color:white}.contact .lead{color:#d1dfd0}.contact .btn{margin-top:14px}.contact-details{display:flex;gap:25px;flex-wrap:wrap;margin-top:26px;color:#d7e1d5}.contact-details a{color:#e7f4e0}.footer{padding:22px 0;background:#10291f;color:#c3d1c3;font-size:.83rem;text-align:center}
+    dialog{border:0;padding:0;background:transparent;max-width:min(1000px,94vw);max-height:92vh}dialog::backdrop{background:#07160de6}dialog img{width:auto;max-width:94vw;max-height:85vh;object-fit:contain}dialog button{position:absolute;top:8px;right:8px;border:0;border-radius:50%;background:white;width:38px;height:38px;cursor:pointer}
+    @media(max-width:800px){.hero-grid{grid-template-columns:1fr;gap:35px;padding:58px 0}.hero-photo{height:330px;max-width:550px;width:100%;border-radius:150px 150px 12px 12px}.two-col{grid-template-columns:1fr;gap:24px}.cards{grid-template-columns:repeat(2,1fr)}.gallery{grid-template-columns:repeat(2,1fr)}.menu{display:block}.navlinks{display:none;position:absolute;top:76px;left:0;right:0;background:var(--cream);padding:22px;flex-direction:column;align-items:flex-start;box-shadow:0 15px 20px #0002}.navlinks.open{display:flex}}
+    @media(max-width:560px){.wrap{width:min(100% - 30px,1120px)}.section{padding:65px 0}.hero h1{font-size:3.8rem}.cards,.projects,.gallery{grid-template-columns:1fr}.gallery .project-img{height:220px}.project-img{height:235px}.contact-details{display:block}.contact-details span{display:block;margin:10px 0}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn{transition:none}}
+  </style>
+</head>
+<body>
+<header><nav class="nav wrap" aria-label="Navigation principale">
+  <a class="brand" href="#accueil">VINCENT <span>SORIANO.</span></a>
+  <button class="menu" id="menuButton" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navlinks">☰</button>
+  <div class="navlinks" id="navlinks"><a href="#profil">À propos</a><a href="#competences">Compétences</a><a href="#realisations">Réalisations</a><a href="#parcours">Parcours</a><a href="#contact">Contact</a></div>
+</nav></header>
+<main>
+<section class="hero" id="accueil"><div class="wrap hero-grid">
+  <div><div class="eyebrow">Portfolio • Aménagement paysager</div><h1>Vincent<br><em>Soriano.</em></h1><p>Apprenti paysagiste en BTSA Aménagements paysagers. Concevoir, aménager et entretenir des espaces extérieurs durables, adaptés à leur environnement.</p><div class="actions"><a class="btn" href="#realisations">Découvrir mes projets ↗</a><a class="btn outline" href="#contact">Me contacter</a></div></div>
+  <!-- Photo d'accroche : remplacer le fichier dans le dossier img si souhaité -->
+  <div class="hero-photo"><img src="img/creation-massif-pelouse.jpeg" alt="Réalisation paysagère" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"><div class="photo-fallback">Le paysage comme terrain de création.</div></div>
+</div></section>
+<section class="section" id="profil"><div class="wrap two-col"><div><span class="kicker">01 / Mon profil</span><h2>Un parcours tourné vers le paysage</h2><p>Après avoir obtenu une licence en Sciences de l’éducation et de la formation, j’ai choisi de me réorienter vers le secteur du paysage en intégrant un BTSA Aménagements paysagers en alternance.</p><p>Passionné par la nature, la créativité et les aménagements extérieurs, j’apprécie particulièrement la conception et la réalisation de projets paysagers durables.</p><p><strong>Mon objectif :</strong> développer mes compétences, acquérir de l’expérience professionnelle et poursuivre mon évolution dans ce domaine.</p></div><aside class="facts"><p><strong>Formation</strong>BTSA Aménagements paysagers</p><p><strong>Alternance</strong>OLEA Paysage · Loupian · 2025–2027</p><p><strong>Secteur</strong>Bassin de Thau, Montpellier et alentours</p><p><strong>Mobilité</strong>Permis B</p><div class="chips"><span class="chip">Biodiversité</span><span class="chip">Botanique</span><span class="chip">Conception de jardins</span></div></aside></div></section>
+<section class="section alt" id="competences"><div class="wrap"><div class="section-head"><span class="kicker">02 / Savoir-faire</span><h2>Mes compétences</h2><p class="lead">Des compétences techniques développées en formation et sur le terrain.</p></div><div class="cards">
+<article class="skill"><span class="number">01</span><h3>Création paysagère</h3><p>Plantation, création de massifs, engazonnement, bordures et terrasses.</p></article>
+<article class="skill"><span class="number">02</span><h3>Entretien</h3><p>Tonte, taille de haies et d’arbustes, débroussaillage et nettoyage des espaces verts.</p></article>
+<article class="skill"><span class="number">03</span><h3>Matériel</h3><p>Utilisation de débroussailleuses, taille-haies, tondeuses et matériel thermique.</p></article>
+<article class="skill"><span class="number">04</span><h3>Conception</h3><p>Lecture de plans, implantation, réalisation de plans et croquis d’aménagement.</p></article>
+<article class="skill"><span class="number">05</span><h3>Végétaux</h3><p>Choix de végétaux adaptés au climat méditerranéen et prise en compte de la biodiversité.</p></article>
+<article class="skill"><span class="number">06</span><h3>Organisation</h3><p>Préparation de chantier, estimation des besoins en matériaux et organisation des interventions.</p></article>
+</div></div></section>
+<section class="section" id="realisations"><div class="wrap"><div class="section-head"><span class="kicker">03 / Sur le terrain</span><h2>Chantiers & réalisations</h2><p class="lead">Un aperçu de mes expériences en entretien et de mon travail sur des projets d’aménagement.</p></div>
+<div class="projects">
+<article class="project"><div class="project-img"><img src="img/taille.jpeg" alt="Chantier d'entretien paysager" loading="lazy"></div><div class="project-body"><span class="tag">Entretien · OLEA Paysage</span><h3>Entretien de jardins et d’espaces verts</h3><p>Dans le cadre de mon alternance, je participe à la tonte, à la taille des haies et des arbustes, au débroussaillage et au nettoyage des espaces extérieurs. J’utilise notamment la débroussailleuse, le taille-haie et la tondeuse.</p></div></article>
+<article class="project"><div class="project-img"><img src="img/creation-massif.jpeg" alt="Illustration de création paysagère" loading="lazy"></div><div class="project-body"><span class="tag">Projet de conception · Cambous</span><h3>Réaménagement d’un jardin privé</h3><p>À Cambous, Saint-André-de-Sangonis, j’ai travaillé sur l’analyse des besoins, la conception, le choix des végétaux méditerranéens et l’estimation des matériaux. Objectif : un jardin esthétique, économe en eau, facile d’entretien et adapté aux chiens, tout en préservant les éléments existants.</p><p><small>Projet de conception présenté sans préjuger de l’exécution des travaux.</small></p></div></article>
+</div>
+<!-- Galerie : légendes génériques à personnaliser selon les photos réelles. -->
+<div class="gallery">
+<figure><div class="project-img"><img src="img/creation-massif-pelouse.jpeg" alt="Massif et pelouse" loading="lazy"></div><figcaption>Massif et pelouse</figcaption></figure>
+<figure><div class="project-img"><img src="img/creation-pelouse.jpeg" alt="Création de pelouse" loading="lazy"></div><figcaption>Création de pelouse</figcaption></figure>
+<figure><div class="project-img"><img src="img/escalier-bois.jpeg" alt="Escalier en bois" loading="lazy"></div><figcaption>Escalier en bois</figcaption></figure>
+<figure><div class="project-img"><img src="img/synthetique.jpeg" alt="Aménagement en gazon synthétique" loading="lazy"></div><figcaption>Aménagement en gazon synthétique</figcaption></figure>
+</div></div></section>
+<section class="section alt" id="parcours"><div class="wrap two-col"><div><span class="kicker">04 / Expérience</span><h2>Mon parcours professionnel</h2><p class="lead">Des expériences en entreprise et en collectivités, dans le paysage et d’autres environnements professionnels.</p></div><div class="timeline">
+<div class="job"><small>2025–2027</small><h3>Apprenti paysagiste · OLEA Paysage</h3><p>Loupian — Création et entretien, plantations, engazonnement, maçonnerie paysagère, lecture de plans et implantation.</p></div>
+<div class="job"><small>2025</small><h3>Agent technique saisonnier · Commune de Mèze</h3><p>Entretien des espaces verts, taille, débroussaillage, désherbage et nettoyage urbain.</p></div>
+<div class="job"><small>2024–2025</small><h3>Agent technique saisonnier · Commune de Loupian</h3><p>Entretien des espaces publics, maintenance du mobilier urbain et gestion des déchets.</p></div>
+<div class="job"><small>2022–2023</small><h3>Agent technique territorial saisonnier · Sète Agglopôle</h3><p>Complexe Oïkos, Villeveyrac — Évacuation de déchets.</p></div>
+<div class="job"><small>2022</small><h3>Employé étudiant · Intermarché</h3><p>Mèze — Mise en rayon.</p></div>
+<div class="job"><small>2021</small><h3>Saisonnier · EARL Doma Farlet</h3><p>Mèze — Castration de maïs.</p></div>
+</div></div></section>
+<section class="section contact" id="contact"><div class="wrap"><span class="eyebrow">05 / Contact</span><h2>Échangeons autour de vos projets.</h2><p class="lead">Disponible pour échanger sur mon parcours, mes compétences et les opportunités professionnelles dans le paysage.</p><a class="btn" href="mailto:vincentpro@gmail.com?subject=Contact%20portfolio%20-%20Vincent%20Soriano">M’envoyer un e-mail ↗</a><div class="contact-details"><span>✉ <a href="mailto:vincentpro@gmail.com">vincentpro@gmail.com</a></span><span>⌖ Bassin de Thau · Hérault</span><span>Permis B</span></div></div></section>
+</main>
+<footer class="footer">© <span id="year">2026</span> Vincent Soriano · Portfolio paysager</footer>
+<dialog id="lightbox" aria-label="Agrandissement de la photographie"><button id="closeLightbox" aria-label="Fermer">×</button><img id="lightboxImage" alt=""></dialog>
+<script>
+  // Menu mobile
+  const menuButton=document.getElementById('menuButton');
+  const navlinks=document.getElementById('navlinks');
+  menuButton.addEventListener('click',()=>{const open=navlinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));menuButton.textContent=open?'×':'☰'});
+  navlinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navlinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');menuButton.textContent='☰'}));
+  // Année automatique
+  document.getElementById('year').textContent=new Date().getFullYear();
+  // Agrandir les photos au clic
+  const lightbox=document.getElementById('lightbox'),lightboxImage=document.getElementById('lightboxImage');
+  document.querySelectorAll('.project-img img').forEach(img=>img.addEventListener('click',()=>{if(!img.complete||img.naturalWidth===0)return;lightboxImage.src=img.src;lightboxImage.alt=img.alt;lightbox.showModal()}));
+  document.getElementById('closeLightbox').addEventListener('click',()=>lightbox.close());
+  lightbox.addEventListener('click',event=>{if(event.target===lightbox)lightbox.close()});
+</script>
+</body>
+</html>
